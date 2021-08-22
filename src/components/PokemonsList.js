@@ -17,9 +17,7 @@ class PokemonsList extends React.Component {
     }
 
     render() {
-        console.log(this.state.pokemons);
         let elements = this.state.pokemons.map(p => <Pokemon url={p.url} name={p.name}/>);
-        // <div className='gridItem'>Name: {p.name} <br/> Url: {p.url} </div>
         return <div id='gridContainer'>{elements}</div>;
     }
 }
