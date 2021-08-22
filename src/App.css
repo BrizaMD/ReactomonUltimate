@@ -56,7 +56,8 @@ a:hover {
 #gridContainer {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  padding: 10px;
+  grid-gap: 5px;
+  padding: 5px;
   border: 1px solid rgba(240,240,240, 0.8);
 }
 
@@ -64,4 +65,16 @@ a:hover {
   text-transform: capitalize;
   border: 2px solid rgba(240,240,240, 0.8);
   padding: 20px;
+}
+
+.gridItem:hover {
+  cursor: pointer;
+}
+
+.gridItem img {
+  float: left;
+}
+
+.gridItem p {
+  color: rgba(238,21,21, 1)
 }

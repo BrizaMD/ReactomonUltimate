@@ -5,11 +5,11 @@ import Pokemon from "./Pokemon";
 class PokemonsList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {fullResult: [], pokemons: []};
+        this.state = {startUrl: props.startUrl, fullResult: [], pokemons: []};
     }
 
     componentDidMount() {
-        axios.get('https://pokeapi.co/api/v2/pokemon')
+        axios.get(this.state.startUrl)
             .then(res => {
                 const temp = res.data;
                 this.setState({fullResult: temp, pokemons: temp.results});
@@ -18,6 +18,7 @@ class PokemonsList extends React.Component {
 
     render() {
         let elements = this.state.pokemons.map(p => <Pokemon url={p.url} name={p.name}/>);
+
         return <div id='gridContainer'>{elements}</div>;
     }
 }
