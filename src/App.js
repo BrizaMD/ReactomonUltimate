@@ -14,7 +14,7 @@ function App() {
             <Navbar/>
             <Switch>
                 <Route path="/pokemons">
-                    <PokemonsList startUrl="https://pokeapi.co/api/v2/pokemon" />
+                    <PokemonsList />
                 </Route>
                 <Route path="/types">
                     <Types />

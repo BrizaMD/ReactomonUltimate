@@ -1,26 +1,25 @@
 import axios from "axios";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Pokemon from "./Pokemon";
 
-class PokemonsList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {startUrl: props.startUrl, fullResult: [], pokemons: []};
-    }
+const PokemonsList = () => {
+    const firstEndpoint =  "https://pokeapi.co/api/v2/pokemon";
+    const [fullResult, setFullResult] = useState([]);
+    const [pokemons, setPokemons] = useState([]);
 
-    componentDidMount() {
-        axios.get(this.state.startUrl)
+    useEffect(() => {
+        axios.get(firstEndpoint)
             .then(res => {
-                const temp = res.data;
-                this.setState({fullResult: temp, pokemons: temp.results});
+                setFullResult(res.data);
+                setPokemons(res.data.results);
             })
-    }
+    }, []);
 
-    render() {
-        let elements = this.state.pokemons.map(p => <Pokemon url={p.url} name={p.name}/>);
-
-        return <div id='gridContainer'>{elements}</div>;
-    }
+    return (
+            <div id='gridContainer'>
+                {pokemons.map(pokemon => <Pokemon url={pokemon.url} name={pokemon.name}/>)}
+            </div>
+            )
 }
 
 export default PokemonsList;
