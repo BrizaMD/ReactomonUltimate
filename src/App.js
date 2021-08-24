@@ -17,7 +17,7 @@ function App() {
                     <PokemonsList startUrl="https://pokeapi.co/api/v2/pokemon" />
                 </Route>
                 <Route path="/types">
-                    <Types startUrl="https://pokeapi.co/api/v2/type" />
+                    <Types />
                 </Route>
             </Switch>
         </Router>

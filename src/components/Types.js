@@ -1,29 +1,28 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Pokemon from "./Pokemon";
 
-class Types extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {startUrl: props.startUrl, types: []};
-    }
+const Types = (props) => {
+    const firstEndpoint =  "https://pokeapi.co/api/v2/type";
+    const [types, setTypes] = useState([]);
 
-    componentDidMount() {
-        axios.get(this.state.startUrl)
+    useEffect(() => {
+        axios.get(firstEndpoint)
             .then(res => {
-                const temp = res.data;
-                this.setState({types: temp.results});
+                setTypes(res.data.results);
             })
-    }
 
-    render() {
-        let elements = this.state.types.map(p =>
-            <div className="gridItem" url={p.url} name={p.name}>
-                <p>{p.name}</p>
-            </div>);
+    }, []);
 
-        return <div id='gridContainer'>{elements}</div>;
-    }
+    return (
+        <div id='gridContainer'>
+            {types.map(
+                (type, index) => (
+                    <div className="gridItem" url={type.url} name={type.name} key={index}>
+                        <p>{type.name}</p>
+                    </div>
+                ))}
+        </div>
+    );
 }
 
 export default Types;
