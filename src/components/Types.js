@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 
-const Types = (props) => {
+const Types = () => {
     const firstEndpoint =  "https://pokeapi.co/api/v2/type";
     const [types, setTypes] = useState([]);
 
@@ -10,14 +10,13 @@ const Types = (props) => {
             .then(res => {
                 setTypes(res.data.results);
             })
-
     }, []);
 
     return (
         <div id='gridContainer'>
             {types.map(
                 (type, index) => (
-                    <div className="gridItem" url={type.url} name={type.name} key={index}>
+                    <div className="gridItem" key={index}>
                         <p>{type.name}</p>
                     </div>
                 ))}

@@ -1,39 +1,30 @@
 import axios from "axios";
-import React from "react";
-import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
 
-class Pokemon extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: props.name,
-            detailsUrl: props.url,
-            sprite: '',
-            id: 0,
-        };
-    }
+const Pokemon = (props) => {
+    const [name] = useState(props.name);
+    const [detailsUrl] = useState(props.url);
+    const [sprite, setSprite] = useState('');
+    const [id, setId] = useState(0);
 
-    componentDidMount() {
-        axios.get(this.state.detailsUrl)
+    useEffect(() => {
+        axios.get(detailsUrl)
             .then(res => {
-                const pokeData = res.data;
-                this.setState({
-                    sprite: pokeData.sprites.front_default,
-                    id: pokeData.id,
-                });
+                setSprite(res.data.sprites.front_default);
+                setId(res.data.id);
             })
+    }, []);
+
+    const handleClick = () => {
+        alert("im getting clicked: " + name);
     }
 
-    render() {
-        return <div key={this.state.id} className={'gridItem'} onClick={this.handleClick.bind(this)}>
-        <img src={this.state.sprite} alt={'image of ' + this.state.name}/>
-            <p>Name: {this.state.name}</p>
-        </div>;
-    }
-
-    handleClick() {
-        alert("im getting clicked boiiiii " + this.state.name);
-    }
+    return (
+        <div key={id} className={'gridItem'} onClick={handleClick}>
+            <img src={sprite} alt={'image of ' + name}/>
+            <p>Name: {name}</p>
+        </div>
+    )
 }
 
-export default Pokemon;
+export default React.memo(Pokemon);
