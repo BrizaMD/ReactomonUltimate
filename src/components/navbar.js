@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 
-function Navbar() {
+const Navbar = () => {
     return(
         <div className="navbar">
             <ul>

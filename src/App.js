@@ -6,7 +6,7 @@ import PokemonsList from "./components/PokemonsList";
 import Home from "./components/Home";
 import Types from "./components/Types";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
         <Home/>
