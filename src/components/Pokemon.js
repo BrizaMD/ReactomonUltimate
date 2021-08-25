@@ -6,23 +6,26 @@ const Pokemon = (props) => {
     const [detailsUrl] = useState(props.url);
     const [sprite, setSprite] = useState('');
     const [id, setId] = useState(0);
+    const [details, setDetails] = useState({});
+    const [type, setType] = useState('');
 
     useEffect(() => {
         axios.get(detailsUrl)
             .then(res => {
-                setSprite(res.data.sprites.front_default);
+                setDetails(res.data);
+                setSprite(res.data.sprites.other.dream_world.front_default);
                 setId(res.data.id);
+                setType(res.data.types.map(type => type.type.name + ' '))
             })
     }, []);
 
-    const handleClick = () => {
-        alert("im getting clicked: " + name);
-    }
+    // folyt köv handle click
 
     return (
-        <div key={id} className={'gridItem'} onClick={handleClick}>
+        <div key={id} className={'gridItem'}>
             <img src={sprite} alt={'image of ' + name}/>
             <p>Name: {name}</p>
+            <p>Type: {type}</p>
         </div>
     )
 }

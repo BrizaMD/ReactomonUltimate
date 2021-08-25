@@ -1,5 +1,12 @@
+#root{
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -9,6 +16,8 @@
 
 body {
   background-color: rgba(34,34,36, 1);
+  height: 100%;
+  justify-content: center;
 }
 
 h1 {
@@ -54,27 +63,72 @@ a:hover {
 }
 
 #gridContainer {
+  margin: auto;
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto;
   grid-gap: 5px;
   padding: 5px;
   border: 1px solid rgba(240,240,240, 0.8);
+  width: 50%;
+  height: 100%;
+
 }
 
 .gridItem {
   text-transform: capitalize;
   border: 2px solid rgba(240,240,240, 0.8);
   padding: 20px;
+  max-height: 200px;
 }
 
 .gridItem:hover {
+
   cursor: pointer;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 5px;
+  }
 }
 
 .gridItem img {
   float: left;
+  object-fit: contain;
+  transition: transform .2s;
+  max-height: 150px;
+}
+
+.gridItem img:hover {
+  /* animation: MoveUpDown 0.5s linear infinite; */
+  transform: scale(1.2);
+  position: relative;
 }
 
 .gridItem p {
   color: rgba(238,21,21, 1)
+}
+
+#buttonsContainer {
+  color: rgba(238,21,21, 1);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#prev, #next {
+  height: 30px;
+  margin: auto;
+  border: 2px solid rgba(240,240,240, 0.8);
+  padding: 20px;
+}
+
+#prev p, #next p {
+  margin: auto;
+}
+
+#prev:hover, #next:hover {
+  cursor: pointer;
 }

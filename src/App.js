@@ -5,6 +5,7 @@ import React from "react";
 import PokemonsList from "./components/PokemonsList";
 import Home from "./components/Home";
 import Types from "./components/Types";
+import PokemonDetail from "./components/PokemonDetail";
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
             <Switch>
                 <Route path="/pokemons">
                     <PokemonsList />
+                </Route>
+                <Route path="/pokemons/:id">
+                    <PokemonDetail />
                 </Route>
                 <Route path="/types">
                     <Types />
