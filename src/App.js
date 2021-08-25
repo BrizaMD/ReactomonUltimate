@@ -14,13 +14,11 @@ const App = () => {
         <Router>
             <Navbar/>
             <Switch>
-                <Route path="/pokemons">
+                <Route path="/pokemons" exact>
                     <PokemonsList />
                 </Route>
-                <Route path="/pokemons/:id">
-                    <PokemonDetail />
-                </Route>
-                <Route path="/types">
+                <Route path="/pokemons/:id" render={(props) => <PokemonDetail {...props} />} exact />
+                <Route path="/types" exact>
                     <Types />
                 </Route>
             </Switch>

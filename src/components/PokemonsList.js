@@ -4,7 +4,6 @@ import Pokemon from "./Pokemon";
 
 const PokemonsList = () => {
     const firstUrl =  "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20";
-    const [fullResult, setFullResult] = useState([]);
     const [pokemons, setPokemons] = useState([]);
     const [prev, setPrev] = useState('');
     const [next, setNext] = useState('');
@@ -12,7 +11,6 @@ const PokemonsList = () => {
     useEffect(() => {
         axios.get(firstUrl)
             .then(res => {
-                setFullResult(res.data);
                 setPokemons(res.data.results);
                 setPrev(res.data.previous);
                 setNext(res.data.next);
@@ -23,7 +21,6 @@ const PokemonsList = () => {
     const getPokemons = (currentUrl) => {
         axios.get(currentUrl)
             .then( async resCurrent => {
-                await setFullResult(resCurrent.data);
                 await setPokemons(resCurrent.data.results);
                 await setPrev(resCurrent.data.previous);
                 await setNext(resCurrent.data.next);
