@@ -5,7 +5,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App title="Reactomon Ultimate"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
