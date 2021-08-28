@@ -32,12 +32,6 @@ a:hover {
   color: rgba(240,240,240, 1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -51,84 +45,4 @@ a:hover {
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#gridContainer {
-  margin: auto;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 5px;
-  padding: 5px;
-  border: 1px solid rgba(240,240,240, 0.8);
-  width: 50%;
-  height: 100%;
-
-}
-
-.gridItem {
-  text-transform: capitalize;
-  border: 2px solid rgba(240,240,240, 0.8);
-  padding: 20px;
-  max-height: 200px;
-}
-
-.gridItem:hover {
-
-  cursor: pointer;
-}
-
-@keyframes MoveUpDown {
-  0%, 100% {
-    bottom: 0;
-  }
-  50% {
-    bottom: 5px;
-  }
-}
-
-.gridItem img {
-  float: left;
-  object-fit: contain;
-  transition: transform .2s;
-  max-height: 150px;
-}
-
-.gridItem img:hover {
-  /* animation: MoveUpDown 0.5s linear infinite; */
-  transform: scale(1.2);
-  position: relative;
-}
-
-.gridItem p {
-  color: rgba(238,21,21, 1)
-}
-
-#buttonsContainer {
-  color: rgba(238,21,21, 1);
-  display: flex;
-  justify-content: space-evenly;
-}
-
-#prev, #next {
-  height: 30px;
-  margin: auto;
-  border: 2px solid rgba(240,240,240, 0.8);
-  padding: 20px;
-}
-
-#prev p, #next p {
-  margin: auto;
-}
-
-#prev:hover, #next:hover {
-  cursor: pointer;
 }
