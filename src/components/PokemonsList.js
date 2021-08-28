@@ -43,7 +43,7 @@ const PokemonsList = () => {
 export default PokemonsList;
 
 
-export const GridContainer = styled.div`
+const GridContainer = styled.div`
   margin: auto;
   display: grid;
   grid-template-columns: auto auto auto;

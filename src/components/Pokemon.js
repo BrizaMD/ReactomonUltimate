@@ -42,7 +42,7 @@ const Pokemon = (props) => {
 export default React.memo(Pokemon);
 
 
-export const GridItem = styled.div`
+const GridItem = styled.div`
   text-transform: capitalize;
   border: 2px solid rgba(240,240,240, 0.8);
   padding: 20px;
@@ -70,14 +70,14 @@ export const GridItem = styled.div`
   }
 `;
 
-export const TypeSpan = styled.div`
+const TypeSpan = styled.div`
   color: white;
   padding: 3px;
   margin: 1px;
   background: ${({color}) => handleColorType(color)};
 `;
 
-export const handleColorType = color => {
+const handleColorType = color => {
     switch (color) {
         case "bug":
             return "#729f3f";
