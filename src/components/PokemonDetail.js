@@ -47,7 +47,7 @@ const PokemonDetail = (props) => {
                 })
             });
         setUpStats(pokemon.stats);
-    }, [detailsUrl, pokemon.species]);
+    }, [detailsUrl, getAllWeaknesses, pokemon.species, pokemon.stats]);
 
     function setUpStats(statBlock){
         let hp = 0;
