@@ -24,13 +24,11 @@ const Pokemon = (props) => {
             <GridItem key={id} className={'gridItem'}>
                 <img src={sprite} alt={'image of ' + name}/>
                 <p>Name:<br/>{name}</p>
-                <p>Type:<br/>
+                <div><span>Type:</span><br/>
                     {types.map(type => (
-                        <TypeSpan color={type.type.name}>{type.type.name}<br/></TypeSpan>
+                        <TypeSpan color={type.type.name} key={type.type.name}>{type.type.name}<br/></TypeSpan>
                     ))}
-                </p>
-
-
+                </div>
             </GridItem>
         </Link>
     )
@@ -46,11 +44,15 @@ const GridItem = styled.div`
   height: 150px;
   font-family: "Flexo-Demi",arial,sans-serif;
   font-size: 15px;
-  background-color: #383737;
+  background-color: ${(props) => props.theme.backgroundColor};
 
-  p {
-    color: rgba(238,21,21, 1);
+  div, p{
+    color: ${(props) => props.theme.text};
   }
+  
+ span {
+   color: red;
+ }
   
   :hover {
     cursor: pointer;

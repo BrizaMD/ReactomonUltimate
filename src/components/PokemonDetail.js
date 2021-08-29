@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -93,6 +93,7 @@ const PokemonDetail = (props) => {
         return returnString;
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     async function getAllWeaknesses(url) {
         let response;
         await axios.get(url)
