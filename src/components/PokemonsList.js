@@ -44,20 +44,21 @@ export default PokemonsList;
 
 
 const GridContainer = styled.div`
+  background-color: ${(props) => props.theme.backgroundColor};
   margin: auto;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   grid-gap: 5px;
   padding: 5px;
-  border: 1px solid rgba(240,240,240, 0.8);
-  width: 50%;
+  border: ${(props) => props.theme.border};
+
   height: 100%;
 `;
 
 const NavButton = styled.div`
   height: 30px;
   margin: auto;
-  border: 2px solid rgba(240,240,240, 0.8);
+  border: ${(props) => props.theme.border};
   padding: 20px;
   :hover {
     cursor: pointer;

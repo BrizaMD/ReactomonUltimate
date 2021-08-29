@@ -116,13 +116,13 @@ const PokemonDetail = (props) => {
                 <div className='description'><strong>Description:</strong> {descriptionText}
                 </div>
                 <div className='stats'>{
-                    <Stats>
+                    <>
                         <h4>Stats for <span>{pokemon.name}</span>:</h4>
                         <div>Health: {stats.hp}</div>
                         <div>Attack: {stats.attack}</div>
                         <div>Defense: {stats.defense}</div>
                         <div>Speed: {stats.speed}</div>
-                    </Stats>
+                    </>
                 }</div>
                 <div className='type'>
                     <h4>Type:</h4>
@@ -143,10 +143,6 @@ const PokemonDetail = (props) => {
 }
 
 export default PokemonDetail;
-
-const Stats = styled.div`
-  color: aquamarine;
-`;
 
 const DetailsGridContainer = styled.div`
 
@@ -173,7 +169,7 @@ const DetailsGridContainer = styled.div`
   }
 
   text-align: left;
-  background-color: #383737;
+  background-color: ${(props) => props.theme.backgroundColor};
   margin: auto;
   display: grid;
   grid-template-areas:
@@ -185,7 +181,8 @@ const DetailsGridContainer = styled.div`
     'stats stats weaknesses weaknesses weaknesses ';
   grid-gap: 5px;
   padding: 5px;
-  border: 1px solid rgba(240, 240, 240, 0.8);
+  background-color: ${(props) => props.theme.backgroundColor};
+  border: ${(props) => props.theme.border};
   width: 50%;
   height: 100%;
   

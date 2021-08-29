@@ -13,6 +13,9 @@ export const lightTheme = {
     text: '#363537',
     toggleBorder: '#FFF',
     background: '#363537',
+    border: '2px solid rgba(24, 24, 24, 0.8)',
+    linkColor: 'purple',
+    linkHover: 'blue',
 }
 
 export const darkTheme = {
@@ -20,6 +23,9 @@ export const darkTheme = {
     text: '#FAFAFA',
     toggleBorder: '#6B8096',
     background: '#999',
+    border: '2px solid rgba(240, 240, 240, 0.8)',
+    linkColor: 'white',
+    linkHover: 'turquoise',
 }
 
 export const GlobalStyles = createGlobalStyle`

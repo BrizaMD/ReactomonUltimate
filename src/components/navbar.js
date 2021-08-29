@@ -27,5 +27,11 @@ const NavBarStyle = styled.div`
     font-size: 20px;
     display: inline;
     margin: 10px;
+    a {
+      color: ${(props) => props.theme.linkColor};
+      :hover {
+        color: ${(props) => props.theme.linkHover};
+      }
+    }
   }
 `;
