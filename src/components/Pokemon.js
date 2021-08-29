@@ -18,7 +18,6 @@ const Pokemon = (props) => {
                 setSprite(res.data.sprites.other['official-artwork'].front_default);
                 setId(res.data.id);
                 setTypes(res.data.types);
-                console.log(types);
             })
     }, [detailsUrl]);
 
@@ -49,6 +48,7 @@ const GridItem = styled.div`
   height: 150px;
   font-family: "Flexo-Demi",arial,sans-serif;
   font-size: 15px;
+  background-color: #383737;
 
   p {
     color: rgba(238,21,21, 1);
