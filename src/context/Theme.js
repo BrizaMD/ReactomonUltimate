@@ -1,12 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-//
-// export const darkTheme = {
-//     backgroundColor: "rgba(34,34,34, 1)",
-// }
-//
-// export const lightTheme = {
-//     backgroundColor: "rgb(234,234,234)",
-// }
 
 export const lightTheme = {
     body: '#FFF',

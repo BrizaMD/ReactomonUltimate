@@ -10,8 +10,6 @@ const Pokemon = (props) => {
     const [id, setId] = useState(0);
     const [types, setTypes] = useState([]);
 
-
-
     useEffect(() => {
         axios.get(detailsUrl)
             .then(res => {
