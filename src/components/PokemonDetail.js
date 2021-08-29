@@ -47,7 +47,8 @@ const PokemonDetail = (props) => {
                 })
             });
         setUpStats(pokemon.stats);
-    }, [detailsUrl, getAllWeaknesses, pokemon.species, pokemon.stats]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     function setUpStats(statBlock){
         let hp = 0;
