@@ -39,7 +39,7 @@ export default React.memo(Pokemon);
 
 const GridItem = styled.div`
   text-transform: capitalize;
-  border: 2px solid rgba(240,240,240, 0.8);
+  border: ${(props) => props.theme.border};
   padding: 20px;
   height: 150px;
   font-family: "Flexo-Demi",arial,sans-serif;
@@ -52,6 +52,7 @@ const GridItem = styled.div`
   
  span {
    color: red;
+   font-weight: bold;
  }
   
   :hover {
@@ -115,6 +116,10 @@ const handleColorType = color => {
             return "#9eb7b8";
         case "water":
             return "#4592c4";
+        case "shadow":
+            return "#180000";
+        case "unknown":
+            return "#094400";
         default:
             return "#fff";
     }

@@ -8,6 +8,7 @@ import Types from "./components/Types";
 import PokemonDetail from "./components/PokemonDetail";
 import { lightTheme, darkTheme, GlobalStyles } from "./context/Theme.js";
 import {ThemeProvider} from "styled-components";
+import styled from "styled-components";
 
 const App = () => {
     const [theme, setTheme] = useState('dark');
@@ -19,7 +20,7 @@ const App = () => {
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
           <GlobalStyles />
         <div className="App">
-            <button onClick={themeToggler}>Switch Theme</button>
+            <ThemeButton onClick={themeToggler} theme={theme}>Switch Theme</ThemeButton>
             <Home theme={theme} />
             <Router>
                 <Navbar theme={theme} setTheme={setTheme} />
@@ -39,3 +40,21 @@ const App = () => {
 }
 
 export default App;
+
+const ThemeButton = styled.button`
+  display: inline-block;
+  padding: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: ${(props) => props.theme.text};
+  background-color: ${(props) => props.theme.backgroundColor};
+  border: 1px solid black;
+  border-radius: 15px;
+  float: left;
+
+  :active {
+    transform: translateY(4px);
+`;

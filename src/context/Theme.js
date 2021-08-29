@@ -6,8 +6,8 @@ export const lightTheme = {
     toggleBorder: '#FFF',
     background: '#363537',
     border: '2px solid rgba(24, 24, 24, 0.8)',
-    linkColor: 'purple',
-    linkHover: 'blue',
+    linkColor: 'red',
+    linkHover: 'purple',
 }
 
 export const darkTheme = {

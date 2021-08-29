@@ -90,6 +90,10 @@ export const handleColorType = color => {
             return "#9eb7b8";
         case "water":
             return "#4592c4";
+        case "shadow":
+            return "#180000";
+        case "unknown":
+            return "#094400";
         default:
             return "#fff";
     }
